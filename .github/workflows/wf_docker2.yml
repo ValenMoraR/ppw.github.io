@@ -14,7 +14,7 @@ jobs:
     steps:
     # Checkout del código del repositorio
     - name: Check out the repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
 
     # Autenticarse en Docker Hub (opcional, si necesitas subir la imagen)
     # Para esto, es necesario configurar Docker Hub username y password como secrets
@@ -35,7 +35,7 @@ jobs:
 
     # Ejecutar el contenedor a partir de la imagen Docker
     - name: Run Docker container
-      run: docker run -d --name c_clases_udem clases_udem:latest
+      run: docker run -id --name c_clases_udem clases_udem:latest
 
     # (Opcional) Verificar si el contenedor está corriendo correctamente
     - name: Verify Docker container is running
